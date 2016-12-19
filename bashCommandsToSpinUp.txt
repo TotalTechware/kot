@@ -1,0 +1,7 @@
+docker run --name kot_database -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD=asupersecretpassword -e POSTGRES_USER=kotuser -d postgres
+
+git clone https://github.com/totaltechware.com/kot.git
+
+docker build -t thekotcodeimage kot/.
+
+docker run --name kot_codebase -d -p 80:5000 -t thekotcodeimage
